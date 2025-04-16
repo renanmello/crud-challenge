@@ -23,8 +23,8 @@ Este é um projeto completo de CRUD desenvolvido como parte de um desafio técni
 ---
 
 ## Estrutura do Projeto
-crud-challenge/
-├── backend/           # Back-end com Node.js e TypeScript
+```
+crud-challenge/     # Back-end com Node.js e TypeScript
 │   ├── src/
 │   │   ├── controllers/
 │   │   ├── routes/
@@ -45,7 +45,7 @@ crud-challenge/
 │   │   └── App.tsx
 │   └── package.json
 └── README.md          # Documentação do projeto
-
+```
 ## Como Executar o Projeto
 
 ### Pré-requisitos
@@ -119,7 +119,6 @@ npm run dev
 ## Contribuições 
 
 Contribuições são bem-vindas! Se você deseja melhorar este projeto, sinta-se à vontade para abrir uma issue ou enviar um pull request. 
-Autor 
 
     Nome : Renan Pereira Mello
     E-mail : mellorenan19@gmail.com
