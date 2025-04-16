@@ -4,7 +4,7 @@ import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import { deleteUser } from '../services/apiService';
 
 interface UserListProps {
-  users: any[]; // Adiciona a propriedade users
+  users: any[];
   setEditingUser: React.Dispatch<any>;
   fetchUsers: () => void;
 }

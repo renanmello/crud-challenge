@@ -21,16 +21,28 @@ const UserForm: React.FC<{
     try {
       if (editingUser) {
         await updateUser(editingUser.id, values.name, values.email);
-        notification.success({ message: 'Usuário atualizado com sucesso!' });
+        notification.success({
+          message: 'Sucesso',
+          description: 'Usuário atualizado com sucesso!',
+          placement: 'topRight',
+        });
       } else {
         await createUser(values.name, values.email);
-        notification.success({ message: 'Usuário criado com sucesso!' });
+        notification.success({
+          message: 'Sucesso',
+          description: 'Usuário criado com sucesso!',
+          placement: 'topRight',
+        });
       }
       fetchUsers(); // Atualiza a tabela
       form.resetFields(); // Limpa os campos
       setEditingUser(null); // Sai do modo de edição
     } catch (error) {
-      notification.error({ message: 'Erro ao salvar usuário.' });
+      notification.error({
+        message: 'Erro',
+        description: 'Erro ao salvar usuário.',
+        placement: 'topRight',
+      });
     }
   };
 

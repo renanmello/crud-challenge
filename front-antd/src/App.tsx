@@ -3,6 +3,7 @@ import { Layout, Typography } from 'antd';
 import UserForm from './components/UserForm';
 import UserList from './components/UserList';
 import { getAllUsers } from './services/apiService';
+import '@ant-design/v5-patch-for-react-19';
 
 const { Content } = Layout;
 
