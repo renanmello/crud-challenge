@@ -1,0 +1,11 @@
+# dependencias Node.js
+node_modules/
+/front-antd/node_modules/
+/frontend-mui/node_modules/
+
+# Ambiente Local
+.env
+.env.local
+
+# SQLite Database File (opcional)
+# database.sqlite
