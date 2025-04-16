@@ -49,7 +49,20 @@ const UserList: React.FC<UserListProps> = ({ users, setEditingUser, fetchUsers }
     },
   ];
 
-  return <Table dataSource={users} columns={columns} rowKey="id" />;
+  return (
+    <Table
+      dataSource={users}
+      columns={columns}
+      rowKey="id"
+      pagination={{
+        pageSize: 5, // Número de itens por página
+        showSizeChanger: true, // Permite alterar o número de itens por página
+        pageSizeOptions: ['5', '10', '20'], // Opções de tamanho de página
+        showTotal: (total, range) =>
+          `${range[0]}-${range[1]} de ${total} usuários`, // Exibe o total de itens
+      }}
+    />
+  );
 };
 
 export default UserList;

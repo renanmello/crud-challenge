@@ -11,11 +11,17 @@ function App() {
   const [users, setUsers] = useState<any[]>([]);
   const [editingUser, setEditingUser] = useState<any | null>(null);
 
+  // Função para buscar todos os usuários
   const fetchUsers = async () => {
-    const data = await getAllUsers();
-    setUsers(data);
+    try {
+      const data = await getAllUsers();
+      setUsers(data);
+    } catch (error) {
+      console.error('Erro ao buscar usuários:', error);
+    }
   };
 
+  // Busca os usuários ao montar o componente
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -23,11 +29,24 @@ function App() {
   return (
     <Layout style={{ minHeight: '100vh', padding: '24px' }}>
       <Content>
+        {/* Título centralizado */}
         <Typography.Title level={2} style={{ textAlign: 'center' }}>
           CRUD com Ant Design
         </Typography.Title>
-        <UserForm editingUser={editingUser} setEditingUser={setEditingUser} fetchUsers={fetchUsers} />
-        <UserList users={users} setEditingUser={setEditingUser} fetchUsers={fetchUsers} />
+
+        {/* Formulário para criar/editar usuários */}
+        <UserForm
+          editingUser={editingUser}
+          setEditingUser={setEditingUser}
+          fetchUsers={fetchUsers}
+        />
+
+        {/* Lista de usuários */}
+        <UserList
+          users={users}
+          setEditingUser={setEditingUser}
+          fetchUsers={fetchUsers}
+        />
       </Content>
     </Layout>
   );
